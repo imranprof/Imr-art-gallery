@@ -9,6 +9,7 @@ import SignInButton from './components/SignInButton';
 import { useRouter } from "next/navigation";
 import SignInModal from './components/SignInModal'
 import AnimatedComponent from './components/AnimatedComponent'
+import ImageUploadForm from './components/ImageUploadForm'
 
 
 const handleLogout = () => {
@@ -32,7 +33,7 @@ export default function Home() {
 
   return (
     <>
-      <div style={{display: "flex", justifyContent: "center", backgroundColor: "gray"}}>
+      <div className="flex justify-center items-center">
       <h3 >Imr art gallery home</h3>
       {user || isLoggedIn ? (
         <>
@@ -43,11 +44,13 @@ export default function Home() {
         <SignInButton onClick={handleSignIn} />
         </>
       )}
-      <button onClick={()=>{setIsModalOpen(true)}}>Sign in modal</button>
+      <button onClick={()=>{setIsModalOpen(true)}}>Sign in modal</button>  
+    <ImageUploadForm />
     </div>
     <h1>Gsap animation here</h1>
     <AnimatedComponent />
     <div style={{display: "flex", justifyContent: "center"}}>
+
 
     <Image
         src="/images/giovannalodes.jpg"  // Path to your image in the public folder
